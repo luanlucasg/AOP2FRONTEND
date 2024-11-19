@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contatos">
+    <title>Contatos - Finanças em Foco</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <script>
+        function enviar(event) {
+            event.preventDefault(); 
+
+            
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
+
+            
+            if (!name || !email || !message) {
+                alert("Por favor, preencha todos os campos.");
+                return;
+            }
+
+            
+            alert(`Formulário enviado com sucesso!\n\nNome: ${name}\nE-mail: ${email}\nMensagem: ${message}`);
+            
+        }
+    </script>
+
+</head>
+<body>
+    <header>
+        <h1>Finanças em Foco - Contatos</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="taxajuros.html">Taxa de juros</a></li>
+                <li><a href="IAfinanca.html">IA e Finanças</a></li>
+                <li><a href="inflacao.html">Inflação</a></li>
+                <li><a href="contatos.html">Contatos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Contatos</h2>
+        <p>Endereço: Rua Jutuiba, 198, Arauata, Bahia</p>
+        <p>Telefone: (29) 2883-2139</p>
+        <p>E-mail: financaemfoco@email.com</p>
+        <br><br>
+        <h1>Formulário de Contato</h1>
+        <br><br>
+
+
+        <form autocomplete=off method="POST" onsubmit="enviar(event)">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+            <br><br>
+    
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+            <br><br>
+    
+            <label for="message">Mensagem:</label>
+            <textarea id="message" name="message" rows="4" cols="50" required></textarea>
+            <br><br>
+    
+            <button type="submit">Enviar</button>
+        </form>
+    
+    </main>
+    <footer>
+        <p>&copy; 2024 Luan Lucas Gadiolli | AOP 2.</p>
+    </footer>
+</body>
+</html>
